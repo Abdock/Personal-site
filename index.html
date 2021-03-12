@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/deck.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="preloader/preloader.css">
+    <title>My Room</title>
+</head>
+<body>
+    <script src="preloader/preloader.js"></script>
+    <ul id="menu-bar">
+        <li class="menu-item"><a href="games/choosegame.html"><img src="icons/gamepad.png" class="menu-icon"></a></li>
+        <li class="menu-item"><a href="paint/paint.html"><img src="icons/paint.png" class="menu-icon"></a></li>
+        <li class="menu-item"><a href="chat/chat.html"><img src="icons/chat.png" class="menu-icon"></a></li>
+        <li class="menu-item"><a href="musics/music.html"><img src="icons/music.png" class="menu-icon"></a></li>
+        <li class="menu-item"><img src="icons/moon.png" class="menu-icon"></li>
+    </ul>
+    <div id="registration-block">
+        <img src="icons/user.png" alt="" id="registration-icon">
+        <form id="form">
+            <input class="reg-input" type="text" placeholder="Name" id="user-name" required>
+            <br>
+            <span id="name-error"></span>
+            <input class="reg-input" type="password" placeholder="Password" id="user-pass" required>
+            <br>
+            <span id="pass-error"></span>
+            <br>
+            <input class="reg-input" type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+    <a href="main/reg.html" id="to-reg-log">Sign in</a>
+    <div id="message-block">
+        <div id="user-messages"></div>
+        <input type="text" id="message-input">
+        <img src="icons/send.png" id="message-send">
+    </div>
+    <img src="icons/signs.png" alt="" id="exit" onclick="Exit()">
+    <div id="image-block">
+    </div>
+    <canvas id="cnv">
+    </canvas>
+    <script src="main/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

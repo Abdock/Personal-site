@@ -1,0 +1,155 @@
+@font-face
+{
+    font-family: "Lobster";
+    src: url("fonts/Lobster/Lobster-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Play Bold";
+    src: url("fonts/Play/Play-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Play";
+    src: url("fonts/Play/Play-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Roboto";
+    src: url("fonts/Roboto/Roboto-Black.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Roboto Bold";
+    src: url("fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Roboto Italic";
+    src: url("fonts/Roboto/Roboto-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Pacificio";
+    src: url("fonts/Pacifico/Pacifico-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Open Sans";
+    src: url("fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Noto Serif";
+    src: url("fonts/Noto_Serif/NotoSerif-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Noto Serif Italic";
+    src: url("fonts/Noto_Serif/NotoSerif-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "Noto Serif Bold";
+    src: url("fonts/Noto_Serif/NotoSerif-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*
+{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+#menu-bar
+{
+    width: 100%;
+    display: flex;
+    list-style: none;
+}
+
+#cnv
+{
+    position: absolute;
+    z-index: -3;
+    top: 0;
+    left: 0;
+}
+
+.menu-item  
+{
+    width: 20%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    box-sizing: border-box;
+}
+
+.menu-icon
+{
+    width: 15%;
+    vertical-align: middle;
+}
+
+.menu-item:last-child:hover
+{
+    cursor: pointer;
+}
+
+.tab-header
+{
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    border: 1px solid silver;
+    border-bottom: none;
+}
+
+.tab-body
+{
+    display: none;
+    border: 1px solid silver;
+}
+
+.tab-body ul
+{
+    list-style: none;
+}
+
+.active-tab
+{
+    display: block;
+}
