@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="paint.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../icons/paint.png">
+    <link rel="stylesheet" href="../preloader/preloader.css">
+    <title>Paint</title>
+</head>
+<body>
+    <script src="../preloader/preloader.js"></script>
+    <ul id="menu-bar">
+        <li class="menu-item"><a href="../games/choosegame.html"><img src="../icons/gamepad.png" class="menu-icon"></a></li>
+        <li class="menu-item"><a href="../index.html"><img src="../icons/deck.png" class="menu-icon"></a></li>
+        <li class="menu-item"><a href="../chat/chat.html"><img src="../icons/chat.png" class="menu-icon"></a></li>
+        <li class="menu-item"><a href="../musics/music.html"><img src="../icons/music.png" class="menu-icon"></a></li>
+        <li class="menu-item"><img src="../icons/moon.png" class="menu-icon"></li>
+    </ul>
+    <div id="control-menu">
+        <ul id="control-block">
+            <li class="control-item">
+                <input type="color" id="color">
+            </li>
+            <li class="control-item">
+                <input type="file" id="file" title="File">
+            </li>
+            <li class="control-item">
+                <button id="line" class="control-button">Line</button>
+            </li>
+            <li class="control-item">
+                <button id="eraser" class="control-button">Eraser</button>
+            </li>
+            <li class="control-item">
+                <button id="circle" class="control-button">Circle</button>
+            </li>
+            <li class="control-item">
+                <button id="rectangle" class="control-button">Rectangle</button>
+            </li>
+            <li class="control-item">
+                <button id="forward" class="control-button">Forward line</button>
+            </li>
+            <li class="control-item">
+                <div id="filter-block">
+                    <input type="checkbox" id="red-filter">Without Red <br>
+                    <input type="checkbox" id="green-filter">Without Green <br>
+                    <input type="checkbox" id="blue-filter">Without Blue <br>
+                    <input type="checkbox" id="gray-filter">Gray Filter <br>
+                </div>
+            </li>
+            <li class="control-item">
+                <button id="filter-region" class="control-button">Filter region</button>
+                <input type="radio" name="color" id="region-red-filter">R<input type="radio" name="color" id="region-green-filter">G<input type="radio" name="color" id="region-blue-filter">B<input type="radio" name="color" id="region-gray-filter">Gray
+            </li>
+            <li class="control-item">
+                <button id="download" class="control-button"><a href="#" id="download-link">Download</a></button>
+            </li>
+            <li class="control-item">
+                <button id="save-link" class="control-button">Save in galery</button>
+            </li>
+        </ul>
+    </div>
+    <canvas id="cnv"></canvas>
+    <script src="paint.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

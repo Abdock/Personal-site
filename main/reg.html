@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        #registration-block
+        {
+            width: 50%;
+            border: 1px solid silver;
+            text-align: center;
+            margin-left: calc(50% - 25%);
+            margin-top: 2.5%;
+            border-radius: 50px;
+            padding: 2%;
+            box-sizing: border-box;
+        }
+
+        .reg-input
+        {
+            display: inline-block;
+            text-align: center;
+            width: 80%;
+            height: 30px;
+            /* border-radius: 50px; */
+            border: none;
+            border-bottom: 1px solid silver;
+            line-height: 30px;
+            margin: 2% 0;
+        }
+
+        #gender-text
+        {
+            font-size: 1.2em;
+        }
+
+        #about
+        {
+            width: 80%;
+            resize: none;
+            overflow: auto;
+        }
+
+        #about:focus
+        {
+            outline: none;
+        }
+
+        .reg-button
+        {
+            width: 35%;
+            border: 1px solid silver;
+            border-radius: 50px;
+            height: 40px;
+        }
+
+        .reg-input:focus
+        {
+            outline: none;
+        }
+
+        .error-field
+        {
+            border-color: red;
+        }
+
+        #out-link
+        {
+            position: fixed;
+            right: 2%;
+            top: 2%;
+            z-index: 99999;
+        }
+
+        #out-icon
+        {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" id="out-link"><img src="../icons/signs.png" id="out-icon"></a>
+    <div id="registration-block">
+        <form id="form">
+            <input type="email" id="mail" class="reg-input" placeholder="E-Mail" required>
+            <input type="text" id="name" class="reg-input" placeholder="Name" required>
+            <input type="text" id="surname" class="reg-input" placeholder="Surname" required>
+            <input type="password" id="password" class="reg-input" placeholder="Password" required>
+            <input type="password" id="re-password" class="reg-input " placeholder="Re-password" required>
+            <input type="text" id="keyword" class="reg-input " placeholder="Keyword">
+            <br>
+            <span id="gender-text">Gender: </span>
+            <input type="radio" name="gender" required id="male"> Male
+            <input type="radio" name="gender" required id="female"> Female
+            <textarea id="about" cols="20" rows="5" placeholder="About you" aria-setsize="false"></textarea>
+            <br>
+            <input type="submit" value="Submit" class="reg-input reg-button" id="submit">
+            <input type="reset" value="Reset" class="reg-input reg-button" id="reset">
+        </form>
+    </div>
+    <script>
+        var doc = document, math = Math;
+        var users = [];
+        if(localStorage.getItem('My-Room-users') != null)
+        {
+            users = JSON.parse(localStorage.getItem('My-Room-users'));
+        }
+
+        function findObject(array, object)
+        {
+            for (let i = 0; i < array.length; i++)
+            {
+                if(JSON.stringify(array[i]) == JSON.stringify(object))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function User(mail, name, surname, password, keyword, gender, about)
+        {
+            this.Mail = mail;
+            this.Name = name;
+            this.Surname = surname;
+            this.Password = password;
+            this.Keyword = keyword;
+            this.Gender = gender;
+            this.About = about;
+            this.isEnable = true;
+        }
+        
+        doc.getElementById('submit').onclick = function(event)
+        {
+            let mail = doc.getElementById('mail');
+            let name = doc.getElementById('name');
+            let surname = doc.getElementById('surname');
+            let password = doc.getElementById('password');
+            let repassword = doc.getElementById('re-password');
+            let male = doc.getElementById('male');
+            let female = doc.getElementById('female');
+            let regMail = /.+\@\w+\.\w+/.test(mail.value) && /[^\s]/.test(mail.value);
+            let regName = /^[A-Z]/.test(name.value) && /[^\s]/.test(name.value);
+            let regSur = /^[A-Z]/.test(surname.value) && /[^\s]/.test(surname.value);
+            let regPass = /([a-zA-Z]+\d+|\d+[a-zA-Z]+)/.test(password.value) && /[^\s]/.test(password.value);
+            if(password.value.length >= 8 && regPass && password.value == repassword.value && regMail && regName && regSur && (male.checked || female.checked))
+            {
+                console.log('pass');
+                sessionStorage.setItem('pass-registration', 'true');
+                sessionStorage.setItem('user-name', name.value);
+                if(!findObject(users, new User(mail.value, name.value, surname.value, password.value, doc.getElementById('keyword').value, male.checked ? 'Male' : 'Female', doc.getElementById('about').value)))
+                {
+                    let user = new User(mail.value, name.value, surname.value, password.value, doc.getElementById('keyword').value, male.checked ? 'Male' : 'Female', doc.getElementById('about').value);
+                    users.push(user)
+                    sessionStorage.setItem('this-user', JSON.stringify(user));
+                    localStorage.setItem('My-Room-users', JSON.stringify(users));
+                }
+                doc.location.href = '../index.html';
+            }
+            else
+            {
+                if(!regMail)
+                {
+                    mail.classList.add('error-field');
+                }
+                else
+                {
+                    mail.classList.remove('error-field');
+                }
+                if(!regName)
+                {
+                    name.classList.add('error-field');
+                }
+                else
+                {
+                    name.classList.remove('error-field');
+                }
+                if(!regSur)
+                {
+                    surname.classList.add('error-field');
+                }
+                else
+                {
+                    surname.classList.remove('error-field');
+                }
+                if(password.value.length < 8 || !regPass)
+                {
+                    password.classList.add('error-field')
+                }
+                else
+                {
+                    password.classList.remove('error-field');
+                }
+                if(password.value != repassword.value)
+                {
+                    repassword.classList.add('error-field');
+                }
+                else
+                {
+                    repassword.classList.remove('error-field');
+                }
+                console.log('error');
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

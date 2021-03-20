@@ -1,0 +1,119 @@
+#control-menu
+{
+    width: 120px;
+    height: 50px;
+    background: url(../icons/art.png) no-repeat;
+    position: fixed;
+    background-size: 50px;
+    background-position-x: calc(57.5px - 25px);
+    transition: 0.3s;
+}
+
+#control-menu:hover #control-block
+{
+    top: 50px;
+}
+
+#control-block
+{
+    box-sizing: border-box;
+    position: absolute;
+    top: -999px;
+    z-index: 999;
+    margin-left: 1px;
+    border: 1px solid silver;
+    /* border-radius: 15px; */
+    list-style: none;
+    color: black;
+}
+
+.control-item
+{
+    width: 120px;
+    text-align: center;
+    background-color: white;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+
+.control-button
+{
+    width: 100%;
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 50px;
+    /* border-radius: 50px; */
+    background: rgba(0, 0, 0, 0);
+    color: black;
+    text-align: center;
+    padding: 0 10px;
+    transition: 0.3s;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.control-button:focus
+{
+    outline: none;
+}
+
+.control-button:hover
+{
+    cursor: pointer;
+}
+
+#download-link
+{
+    color: black;
+    text-decoration: none;
+}
+
+input[type='file']
+{
+    width: 115px;
+    overflow: hidden;
+}
+
+input[type='color']
+{
+    width: 50px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid silver;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+#filter-block
+{
+    display: inline-block;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+@media(max-height: 600px)
+{
+    .control-icon
+    {
+        width: 15px;
+    }
+
+    .control-button
+    {
+        height: 20px;
+    }
+}
+
+@media(max-height: 360px)
+{
+    .control-button
+    {
+        font-size: 0.8em;
+        height: 15px;
+    }
+}

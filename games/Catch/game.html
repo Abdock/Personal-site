@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>Document</title>
+</head>
+<body>
+    <img src="cogs-on-wheels-interface-symbol-for-settings-edition-button.png" id="settings-logo">
+    <img src="music-note.png" id="music-logo">
+    <img src="info-circular-interface-symbol.png" alt="" id="info-logo">
+    <img src="win.jpg" alt="" id="win">
+    <img src="lose.png" alt="" id="lose">
+    <a href="../choosegame.html" id="out-link"><img src="../../icons/signs.png" id="out-icon"></a>
+    <div id="info">
+        <h1 class="info-header">Правила</h1>
+        <span class="info-text">В игре вы должны окружить красную точку черными точками до того как она доберется до какой-то крайней синей точки.
+            Когда вы нажимаете на синию точку она превращается в черную, это означает что красная точка не может ходить на эту точку, и вы также как только пометили данную точку больше не нажимаете на нее.
+            Вы можете выбирать музыку из меню для игры и можете выбирать сложность.</span>
+        <h1 class="info-header">Уровни сложности</h1>
+        <span class="info-text">В игре есть 3 уровня сложности.
+            <ul id="list">
+                <li>В легкой версий красная точка может двигаться только по вертикали и горизонтали. </li>
+                <li>В средней версий красная точка может двигаться также по горизонтали и вертикали, и по одной диагонали. </li>
+                <li>В сложной красная точка может двигаться во всех напровлениях</li>
+            </ul>
+        </span>
+    </div>
+    <div id="settings-page">
+        <h1 class="headers">Music</h1>
+        <button class="setting-button" id="NoGameNoLife">This Game</button>
+        <button class="setting-button" id="Bleach">Never Meant To Belong</button>
+        <button class="setting-button" id="DemonSlayer">End</button>
+        <input type="range" id="range" min="0" max="100" value="100">
+        <h1 class="headers">Level</h1>
+        <button class="setting-button" id="easy">Easy</button>
+        <button class="setting-button" id="normal">Normal</button>
+        <button class="setting-button" id="hard">Hard</button>
+    </div>
+    <div id="block">
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+@font-face
+{
+    font-family: 'Play';
+    src: url("../../fonts/Play/Play-Regular.ttf") format("truetype");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+#text-area
+{
+    width: 60vw;
+    height: 40vh;
+    border: 1px solid silver;
+    margin: auto;
+    margin-top: 5%;
+    font-family: 'Play';
+    font-size: 2em;
+    text-align: center;
+    line-height: 50px;
+    padding: 10px;
+    overflow: auto;
+}
+
+#control
+{
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+}
+
+#left-button
+{
+    background: darkred;
+    color: white;
+    border: 1px solid silver;
+    padding: 15px 45px;
+    font-family: 'Play';
+}
+
+#right-button
+{
+    background: darkblue;
+    color: white;
+    border: 1px solid silver;
+    padding: 15px 45px;
+    font-family: 'Play';
+}
+
+#change-button
+{
+    background: darkgreen;
+    color: white;
+    border: 1px solid silver;
+    padding: 15px 35px;
+    font-family: 'Play';
+}
+
+.left
+{
+    background: darkred;
+    color: white;
+}
+
+.right
+{
+    background: darkblue;
+    color: white;
+}
+
+#show-word
+{
+    width: 70%;
+    height: 70vh;
+    position: fixed;
+    border: 1px solid silver;
+    left: 15%;
+    margin-top: -2%;
+    background: red;
+    font-size: 3em;
+    font-family: 'Play';
+    text-align: center;
+    color: white;
+    line-height: 70vh;
+}
+
+#out-link
+{
+    position: fixed;
+    right: 2%;
+    top: 2%;
+    z-index: 99999;
+}
+
+#out-icon
+{
+    width: 50px;
+    height: 50px;
+}
